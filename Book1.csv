@@ -1,0 +1,21 @@
+﻿Object ID,Original Name,"Top 
+level","Description 
+Domain","Error 
+Domain","Execution 
+Domain","Extension 
+Domain","IO 
+Domain","Parametric 
+Domain","Provenance 
+Domain","Usability 
+Domain",Comments
+BCO_020356,Genes normally expressed in human tissues (normal RNA-Seq and Affymetrix expression data from Bgee),,-,-,-,-,,-,,,no namespace IDs in description domain
+BCO_011632,Sars-CoV-2/ COVID-19 Biomarker Project HIVE Lab,,,-,-,,,-,-,-,
+BCO_017987,HCV1a ledipasvir resistance SNP detection,,,,-,,,,,,Links in execution domain
+BCO_099545,R Safety Assessment Algorithm for Detection of  Aluminum in Infant Vaccines,,,-,,,,-,,,
+BCO_022530,Athena proof-of-concept variant calling analysis of simulated clinical trial NGS data with results from patients undergoing viral treatment to assess for resistance-associated amino acid substitutions in the target HCV1a viral proteins,,,,,-,,,,,
+BCO_024783,Regulatory BCO for hepatitis C virus resistance analysis,,,-,-,-,,,,,
+BCO_025006,sRNA-seq based method for the detection of viruses in ticks,,,-,,,,,-,-,
+BCO_019942,"Analyzing N-glycans By Clustering, Tissue-Serum Correlations and, Survival Analysis from LC-MS/MS",,,-,,-,-,,-,,
+BCO_018406,Streamlined computational pipeline for genetic background characterization of genetically engineered mice based on next generation sequencing data,,-,-,-,,,-,-,,
+BCO_027463,seekCRIT: Detecting and characterizing differentially expressed circular RNAs using high-throughput sequencing data,,-,-,,-,,-,-,,
+BCO_013139,Tissue-Serum Correlation Analysis of N-glycans using CAMPP,,,-,,-,,,-,,
