@@ -14,11 +14,11 @@
                      "affiliation": "George Washington University",
                      "contribution": [
                          "createdBy",
-						 "curatedBy"
+                         "curatedBy"
                      ]
                  }
              }
-         ],
+        ],
         "contributors": [
             {
                 "name": "Charles Hadley King",

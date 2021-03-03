@@ -1,0 +1,209 @@
+{
+    "object_id": "https://portal.aws.biochemistry.gwu.edu/bco/BCO_020356",
+    "spec_version": "https://w3id.org/ieee/ieee-2791-schema/",
+    "etag": "aa9ab056de90bc2ca65e12968f28350059ed59ff7fbb2f89fd968e85dcb018c2",
+    "provenance_domain": {
+        "name": "Genes normally expressed in human tissues (normal RNA-Seq and Affymetrix expression data from Bgee)",
+        "version": "2.0",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "contributors": [
+            {
+                "name": "Amanda Bell",
+                "orcid": "http://orcid.org/0000-0002-9920-565X",
+                "affiliation": "",
+                "contribution": [
+                    "createdBy"
+                ],
+                "email": "amandab2140@gwu.edu"
+            },
+            {
+                "name": "Frederic Bastian",
+                "orcid": "http://orcid.org/0000-0002-9415-5104",
+                "affiliation": "Swiss Institute of Bioinformatics",
+                "contribution": [
+                    "authoredBy"
+                ],
+                "email": "frederic.bastian@unil.ch"
+            },
+            {
+                "name": "Marc Robinson-Rechav",
+                "orcid": "http://orcid.org/0000-0002-3437-3329",
+                "affiliation": "Swiss Institute of Bioinformatics",
+                "contribution": [
+                    "authoredBy"
+                ],
+                "email": "marc.robinson-rechavi@unil.ch"
+            },
+            {
+                "name": "Hayley Dingerdissen",
+                "orcid": "http://orcid.org/",
+                "affiliation": "GW HIVE-Lab",
+                "contribution": [
+                    "contributedBy"
+                ],
+                "email": "hmhamilt@gwmail.gwu.edu"
+            },
+            {
+                "name": "Evan Holmes",
+                "orcid": "http://orcid.org/",
+                "affiliation": "GW HIVE-Lab",
+                "contribution": [
+                    "contributedBy"
+                ],
+                "email": "evanh@gwmail.gwu.edu"
+            }
+        ],
+        "review": [
+             {
+                 "status": "approved",
+                 "reviewer_comment": "Approved by GW staff.",
+                 "date": "2021-03-03T12:56:19-0500",
+                 "reviewer": {
+                     "name": "Hadley King",
+                     "email": "hadley_king@gwmail.gwu.edu",
+                     "affiliation": "George Washington University",
+                     "contribution": [
+                         "curatedBy"
+                     ]
+                 }
+             }
+        ],
+        "created": "2020-07-10T18:49:44-0500",
+        "modified": "2021-03-03T11:47:50-0500"
+    },
+    "description_domain": {
+        "keywords": [
+            "dsBCO",
+            "human healthy gene expression",
+            "RNA-seq",
+            "tissue specific gene expression",
+            "Affymetrix expression"
+        ],
+        "pipeline_steps": [
+            {
+                "name": "QC data",
+                "step_number": 1,
+                "input_list": [
+                    {
+                        "filename": "Homo_sapiens_UBERON:0000066_AFFYMETRIX_RNA_SEQ.tsv",
+                        "uri": "http://data.oncomx.org/ln2wwwdata/downloads/bgee/current/Homo_sapiens_UBERON:0000066_AFFYMETRIX_RNA_SEQ.tsv"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "http://data.oncomx.org/ln2wwwdata/reviewed/human_normal_expression.csv",
+                        "filename": "human_normal_expression.csv"
+                    }
+                ],
+                "description": "The file was prepared by collaborators at the Swiss Institute of Bioinformatics from expression data hosted in https://bgee.org."
+            }
+        ],
+        "xref": [
+            {
+                "name": "UniProtKB",
+                "namespace": "uniprot",
+                "ids": [
+                    "UniProt AC"
+                ],
+                "access_time": "2020-07-10T17:52:00-0500"
+            },
+            {
+                "namespace": "uberon",
+                "name": "Uberon Anatomical Name",
+                "ids": [
+                    "Uberon anatomical ID"
+                ],
+                "access_time": "2020-07-10T17:52:00-0500"
+            },
+            {
+                "namespace": "taxonomy",
+                "name": "Taxonomy",
+                "ids": [
+                    "9606"
+                ],
+                "access_time": "2020-07-10T17:52:00-0500"
+            },
+            {
+                "namespace": "ensembl",
+                "name": "Ensembl Genome Browser",
+                "ids": [
+                    "Ensembl gene ID"
+                ],
+                "access_time": "2020-07-10T17:52:00-0500"
+            }
+        ],
+        "platform": [
+            "OncoMX"
+        ]
+    },
+    "usability_domain": [
+        "List of human [taxid:9606] genes with normal RNA-Seq and Affymetrix expression data in Bgee; additional documentation available at https://github.com/BgeeDB/bgee_pipeline/tree/develop/pipeline/collaboration/oncoMX#information-about-the-files-generated-for-oncomx"
+    ],
+    "execution_domain": {
+        "external_data_endpoints": [
+            {
+                "name": "oncomx server",
+                "url": "ssh://oncomx-vm-tst.biochemistry.gwu.edu"
+            },
+            {
+                "name": "OncoMX-backend GitHub Repo", 
+                "url": "https://github.com/GW-HIVE/OncoMX-backend"
+            }
+        ],
+        "environment_variables": {
+            "EDITOR": "vim",
+            "HOSTTYPE": "x86_64-linux"
+        },
+        "script_driver": "Python",
+        "software_prerequisites": [
+            {
+                "name": "Python",
+                "version": "2.7.5",
+                "uri": {
+                    "uri": "https://www.python.org/download/releases/2.7.5/"
+                }
+            }
+        ],
+        "script": [
+            {
+                "uri": {
+                    "uri": "https://github.com/GW-HIVE/OncoMX-backend/blob/master/make-dataset.py",
+                    "filename": "make-dataset.py"
+                }
+            }
+        ]
+    },
+    "io_domain": {
+        "input_subdomain": [
+            {
+                "uri": {
+                    "uri": "http://data.oncomx.org/ln2wwwdata/downloads/bgee/current/Homo_sapiens_UBERON:0000066_AFFYMETRIX_RNA_SEQ.tsv",
+                    "filename": "Homo_sapiens_UBERON:0000066_AFFYMETRIX_RNA_SEQ.tsv"
+                }
+            }
+        ],
+        "output_subdomain": [
+            {
+                "mediatype": "csv",
+                "uri": {
+                    "uri": "http://data.oncomx.org/ln2wwwdata/reviewed/human_normal_expression.csv",
+                    "filename": "human_normal_expression.csv"
+                }
+            },
+            {
+                "mediatype": "csv",
+                "uri": {
+                    "uri": "http://data.oncomx.org/ln2wwwdata/reviewed/human_normal_expression.stat.csv",
+                    "filename": "human_normal_expression.stat.csv"
+                }
+            }
+        ]
+    },
+    "parametric_domain": [
+        {
+            "step": "NA",
+            "param": "NA",
+            "value": "NA"
+        }
+    ]
+}
