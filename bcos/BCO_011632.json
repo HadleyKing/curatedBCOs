@@ -1,0 +1,342 @@
+{
+    "provenance_domain": {
+        "name": "Sars-CoV-2/ COVID-19 Biomarker Project HIVE Lab",
+        "version": "1.0",
+        "review": [
+            {
+                "reviewer": {
+                    "name": "Janisha Patel",
+                    "affiliation": "George Washington University - Hive Lab",
+                    "email": "janishapatel@gwu.edu",
+                    "orcid": "https://orcid.org/0000-0002-8824-4637",
+                    "contribution": ["curatedBy"]
+                },
+                "status": "unreviewed"
+            },
+            {
+                "status": "approved",
+                "reviewer_comment": "Approved by GW staff.",
+                "date": "2021-03-03T12:56:19-0500",
+                "reviewer": {
+                    "name": "Hadley King",
+                    "email": "hadley_king@gwmail.gwu.edu",
+                    "affiliation": "George Washington University",
+                    "contribution": [
+                        "createdBy",
+                        "curatedBy"
+                    ]
+                }
+            }
+        ],
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "contributors": [
+            {
+                "name": "Antarjot Kaur",
+                "contribution": [
+                    "createdBy",
+                    "authoredBy"
+                ],
+                "orcid": "https://orcid.org/0000-0002-5222-6074",
+                "email": "akaur23@masonlive.gmu.edu",
+                "affiliation": "George Washington University- HIVE Lab"
+            },
+            {
+                "name": "Ruqaia Al-Kohany",
+                "orcid": "https://orcid.org/0000-0002-2604-7224",
+                "email": "alruqaia@gmail.com",
+                "affiliation": "George Washington University- HIVE Lab",
+                "contribution": [
+                    "createdBy",
+                    "authoredBy"
+                ]
+            }
+        ],
+        "created": "2020-08-05T19:11:28-0500",
+        "modified": "2020-08-19T19:14:57-0500"
+    },
+    "description_domain": {
+        "keywords": [
+            "dsBCO",
+            "SARS-CoV-2",
+            "COVID-19",
+            "Coronavirus",
+            "disease",
+            "Biomarker",
+            "HIVE Lab",
+            "database",
+            "data curation"
+        ],
+        "platform": [
+            "Google Sheets"
+        ],
+        "pipeline_steps": [
+            {
+                "step_number": 1,
+                "name": "Google Scholar",
+                "description": "Search for the words “COVID-19”, “Biomarker”, or a specific known biomarker on Google Scholar",
+                "input_list": [
+                    {
+                        "uri": "https://scholar.google.com/",
+                        "filename": "Google Scholar"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C47&q=COVID+19+biomarkers&btnG=&oq=covid"
+                    }
+                ]
+            },
+            {
+                "step_number": 2,
+                "name": "Google Scholar",
+                "description": "If the journal article is from a credible source and contains information to fill out the table, proceed. If the journal article does not have a specific biomarker that can be listed, go back to step 1",
+                "input_list": [
+                    {
+                        "uri": "https://scholar.google.com/"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C47&q=COVID+19+biomarkers&btnG=&oq=covid",
+                        "filename": "COVID19_BiomarkerKB_v1.0"
+                    }
+                ]
+            },
+            {
+                "step_number": 3,
+                "name": "Google Sheets",
+                "description": "List PMID of specific scholarly article under literature_evidence column in COVID19_BiomarkerKB_v1.0  google sheet",
+                "input_list": [
+                    {
+                        "uri": "https://pubmed.ncbi.nlm.nih.gov/"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://docs.google.com/spreadsheets/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/edit#gid=1818832502"
+                    }
+                ],
+                "prerequisite": []
+            },
+            {
+                "step_number": 4,
+                "name": "Uniprot website",
+                "description": "Search UniProt for listed biomarker and list it in biomarker_ac column in COVID19_BiomarkerKB_v1.0  google sheet",
+                "input_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ],
+                "prerequisite": [
+                    {
+                        "uri": {
+                            "uri": "https://uniprot.org/",
+                            "filename": "Database for Protein sequences"
+                        },
+                        "name": "Uniprot Database"
+                    }
+                ]
+            },
+            {
+                "step_number": 5,
+                "name": "Google Sheets",
+                "description": "List how the biomarker is measured( i.e. the biomaker measured by increased levels of the biomarker, decreased levels, etc.) under measured_biomarker column on COVID19_BiomarkerKB_v1.0 google sheet",
+                "output_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ],
+                "input_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ]
+            },
+            {
+                "step_number": 6,
+                "name": "Google Sheet",
+                "description": "Search the specimen type id from Uberon ID (what kind of specimen is the biomarker found in i.e blood, plasma, serum, etc) and list it under specimen_type column on  COVID19_BiomarkerKB_v1.0  google sheet",
+                "input_list": [
+                    {
+                        "uri": "https://www.ebi.ac.uk/ols/ontologies/uberon."
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ],
+                "prerequisite": []
+            },
+            {
+                "description": "List the biomarker type( i.e. monitoring, prognostic, predictive, diagnostic, susceptibility/risk, pharmacodynamic or response) under BEST_biomarker_type column on COVID19_BiomarkerKB_v1.0  google sheet",
+                "name": "Google Sheet",
+                "step_number": 7,
+                "input_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ]
+            },
+            {
+                "step_number": 8,
+                "description": "Describe how the biomarker relates to COVID-19 in the biomarker_description column on the google sheet",
+                "name": "Google sheet",
+                "prerequisite": [],
+                "output_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ],
+                "input_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ]
+            },
+            {
+                "step_number": 9,
+                "description": "If there any drug mentioned in relation to the biomarker in the reading, list it in the drug column on COVID19_BiomarkerKB_v1.0 google sheet. Otherwise write NA in drug column on COVID19_BiomarkerKB_v1.0 google sheet",
+                "name": "Google Sheet",
+                "input_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ]
+            },
+            {
+                "step_number": 10,
+                "description": "List curator name under curator_name column on COVID19_BiomarkerKB_v1.0  google sheet",
+                "name": "Google Sheet",
+                "input_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ]
+            },
+            {
+                "step_number": 11,
+                "description": "List curator ORCID ID under curator_ORCID on COVID19_BiomarkerKB_v1.0 google sheet",
+                "name": "Google sheet",
+                "input_list": [
+                    {
+                        "uri": "https://orcid.org/"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ]
+            },
+            {
+                "step_number": 12,
+                "description": "Have a reviewer review  the biomarker information is correct and initial to confirm on the COVID19_BiomarkerKB_v1.0  google sheet",
+                "name": "Google Sheets",
+                "input_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ]
+            },
+            {
+                "step_number": 13,
+                "description": "Information is translated to the cite for it to be publicly available on OncoMX website",
+                "name": "OncoMX",
+                "prerequisite": [],
+                "output_list": [
+                    {
+                        "filename": "COVID19_BiomarkerKB_v1.0.xlsx",
+                        "uri": "https://data.oncomx.org/covid19"
+                    }
+                ],
+                "input_list": [
+                    {
+                        "filename": "COVID19_BiomarkerKB_v1.0",
+                        "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                    }
+                ]
+            }
+        ]
+    },
+    "execution_domain": {
+        "environment_variables": {
+            "BROWSER": "Chrome"
+        },
+        "script": [
+            {
+                "uri": {
+                    "filename": "Steps for Biomarker Database curation",
+                    "uri": "https://docs.google.com/document/d/1ORXbsm2l_7q2i9y_d5Fcm2riQsSxlJhCY9lg5-AY3dw/edit?usp=sharing"
+                }
+            }
+        ],
+        "script_driver": "Manual",
+        "software_prerequisites": [
+            {
+                "uri": {
+                    "filename": "Google sheets",
+                    "uri": "https://www.google.com/sheets/"
+                },
+                "name": "Google Sheets",
+                "version": "N/A"
+            }
+        ],
+        "external_data_endpoints": [
+            {
+                "name": "Google sheets",
+                "url": "https://www.google.com/sheets/"
+            }
+        ]
+    },
+    "io_domain": {
+        "input_subdomain": [
+            {
+                "uri": {
+                    "filename": "COVID19_BiomarkerKB_v1.0",
+                    "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing"
+                }
+            }
+        ],
+        "output_subdomain": [
+            {
+                "uri": {
+                    "uri": "https://drive.google.com/file/d/1kCv3X7xAnVU-AS6asNC3MOKg0Zm00QwC/view?usp=sharing",
+                    "filename": "COVID19_BiomarkerKB_v1.0"
+                },
+                "mediatype": "xlsx file"
+            }
+        ]
+    },
+    "etag": "3cc84b877df9462c4b1b92c7cd4d4ca69c8ba8adb6b26fab6735f7ab4edae297",
+    "usability_domain": [
+        "This is a literature review where students looked on google scholar to find any and every biomarker related to COVID-19 and filled in fields such as literature evidence, biomarker measured, specimen type, biomarker type, biomarker relation to COVID-19 in order to understand/confirm the relationship between COVID-19 and biomarkers. Reaseachers can use this information to help in treatement, diagnosis and drug development. "
+    ],
+    "object_id": "https://portal.aws.biochemistry.gwu.edu/bco/BCO_011632",
+    "spec_version": "https://w3id.org/ieee/ieee-2791-schema/2791object.json"
+}

@@ -1,7 +1,7 @@
 {
     "object_id": "https://portal.aws.biochemistry.gwu.edu/bco/BCO_020356",
-    "spec_version": "https://w3id.org/ieee/ieee-2791-schema/",
-    "etag": "aa9ab056de90bc2ca65e12968f28350059ed59ff7fbb2f89fd968e85dcb018c2",
+    "spec_version": "https://w3id.org/ieee/ieee-2791-schema/2791object.json",
+    "etag": "c95a53d66c1cf1ae64f5ea769b068e8ac87a8db4a7d67f5e41dab503721c37b2",
     "provenance_domain": {
         "name": "Genes normally expressed in human tissues (normal RNA-Seq and Affymetrix expression data from Bgee)",
         "version": "2.0",
@@ -100,34 +100,10 @@
         ],
         "xref": [
             {
-                "name": "UniProtKB",
-                "namespace": "uniprot",
-                "ids": [
-                    "UniProt AC"
-                ],
-                "access_time": "2020-07-10T17:52:00-0500"
-            },
-            {
-                "namespace": "uberon",
-                "name": "Uberon Anatomical Name",
-                "ids": [
-                    "Uberon anatomical ID"
-                ],
-                "access_time": "2020-07-10T17:52:00-0500"
-            },
-            {
                 "namespace": "taxonomy",
                 "name": "Taxonomy",
                 "ids": [
                     "9606"
-                ],
-                "access_time": "2020-07-10T17:52:00-0500"
-            },
-            {
-                "namespace": "ensembl",
-                "name": "Ensembl Genome Browser",
-                "ids": [
-                    "Ensembl gene ID"
                 ],
                 "access_time": "2020-07-10T17:52:00-0500"
             }
@@ -198,12 +174,5 @@
                 }
             }
         ]
-    },
-    "parametric_domain": [
-        {
-            "step": "NA",
-            "param": "NA",
-            "value": "NA"
-        }
-    ]
+    }
 }
