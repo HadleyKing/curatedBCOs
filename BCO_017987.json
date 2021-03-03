@@ -1,8 +1,24 @@
 {
     "object_id": "https://portal.aws.biochemistry.gwu.edu/bco/BCO_017987",
     "spec_version": "https://w3id.org/ieee/ieee-2791-schema/2791object.json",
-    "etag": "bd324aa23a79a457b93dcddbaf684f1abab6087c454dffca89f6cc4ad0454918",
+    "etag": "9bb879ca318578b6669eb21dfd35372373c2b0ff4b1c56dada11bacf28a27b89",
     "provenance_domain": {
+        "review": [
+             {
+                 "status": "approved",
+                 "reviewer_comment": "Approved by GW staff.",
+                 "date": "2021-03-03T12:56:19-0500",
+                 "reviewer": {
+                     "name": "Hadley King",
+                     "email": "hadley_king@gwmail.gwu.edu",
+                     "affiliation": "George Washington University",
+                     "contribution": [
+                         "createdBy",
+						 "curatedBy"
+                     ]
+                 }
+             }
+         ],
         "contributors": [
             {
                 "name": "Charles Hadley King",
